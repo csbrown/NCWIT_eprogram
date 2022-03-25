@@ -143,7 +143,7 @@ iframe
 {
     border-radius: 0px;
     border: 0;
-    background-color: rgba(0,0,0,0.19);
+    background-color: rgba(1,1,1,0.8);
 }
 .navbar-default .navbar-nav>li>a {
     font-size: 16px;
@@ -189,7 +189,7 @@ iframe
 }
 #overlay-1
 {
-    background-color: rgba(40, 40, 40, 0.6);
+    background-color: rgba(40, 40, 40, 0.0);
     position: relative;
 }
 
