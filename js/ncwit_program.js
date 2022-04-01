@@ -1,8 +1,12 @@
 import mustache from "./mustache.js"
 
+
+
 const img_template = `
-                            <div class="col-md-8 col-md-offset-2">
-                                <img class="img-circle img-responsive center-block" src="affiliate_data/winner_images/{{src}}">
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <img class="img-circle img-responsive center-block" src="affiliate_data/winner_images/{{src}}">
+                                </div>
                             </div>
 				        	<h4>{{name}}</h4>
 				        	<h4>{{school}}</h4>
