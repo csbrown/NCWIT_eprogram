@@ -55,6 +55,7 @@
 }
 .expansion {
     font-size: 10vw !important;
+    color: #0000EE;
 }
 .committee > tbody > tr > td {
     font-size: 20px;
