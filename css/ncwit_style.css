@@ -1,0 +1,39 @@
+.section-title {
+    color: #2E8CCB;
+    font-weight: bold;
+    font-size: 49px;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 58px;
+    text-transform: uppercase;
+}
+.textwall {
+    text-align: left;
+}
+@media print {
+    .print-pagebreak {
+        page-break-before: always;
+    }
+}
+.agenda {}
+.agenda > thead > tr > th {
+    text-align: center;
+    font-size: 30px;
+    background-color: #2E8CCB;
+    color: white;
+    font-weight: bold;
+}
+.agenda > thead > tr > .time {
+    width: 20%;
+}
+.agenda > thead > tr > .event {
+    width: 50%;
+}
+.agenda > thead > tr > .location {
+    width: 30%;
+}
+.agenda > tbody > tr > td {
+    font-size: 20px;
+}
+.committee > tbody > tr > td {
+    font-size: 20px;
+}

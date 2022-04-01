@@ -106,22 +106,6 @@ li a
 {
     text-decoration: none;
 }
-#heading-text 
-{
-    padding-top: 10px;
-}
-#heading-text h3 {
-    font-size: 49px;
-    font-family: 'Roboto', sans-serif;
-    padding-top: 58px;
-    text-transform: uppercase;
-}
-
-#heading-text p {
-    font-size: 18px;
-    font-family: 'Roboto', sans-serif;
-    padding: 5px 0px
-}
 
 .main_content 
 {
@@ -184,8 +168,8 @@ iframe
 {
     background: url(../img/background.jpg);
     background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+    background-position: 0% 30%;
+    background-size: 100%;
 }
 #overlay-1
 {
