@@ -112,11 +112,11 @@ function makeWinnersFromCSV(data, container_selector) {
     container.selectAll("div")
         .data(data_matrix).enter()
         .append("div")
-            .attr("class", "row main-content")
+            .attr("class", "row main-content winnerrow")
             .selectAll("div")
             .data(d => d).enter()
             .append("div")
-                .attr("class", "col-md-4 col-sm-6 text-center")
+                .attr("class", "col-md-4 col-sm-6 text-center winner")
                 .html(d => mustache.render(img_template, d));
 }
 
