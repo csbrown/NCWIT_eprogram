@@ -3,6 +3,7 @@ import mustache from "./mustache.js"
 
 
 const img_template = `
+                        <div class="innerwinner">
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
                                     <img class="img-circle img-responsive center-block" src="affiliate_data/winner_images/{{src}}">
@@ -13,6 +14,7 @@ const img_template = `
 				        	<h4>{{city}}</h4>
 				        	<h4>Class of {{classyear}}</h4>
 				        	<p>{{bio}}</p>
+                        </div>
 `; 
 
 
@@ -116,7 +118,7 @@ function makeWinnersFromCSV(data, container_selector) {
             .selectAll("div")
             .data(d => d).enter()
             .append("div")
-                .attr("class", "col-md-4 col-sm-6 text-center winner")
+                .attr("class", "col-md-4 col-sm-12 col-xs-12 text-center winner")
                 .html(d => mustache.render(img_template, d));
 }
 
