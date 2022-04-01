@@ -21,6 +21,7 @@
     background-color: #2E8CCB;
     color: white;
     font-weight: bold;
+    max-width: 100%;
 }
 .agenda > thead > tr > .time {
     width: 20%;
@@ -31,8 +32,29 @@
 .agenda > thead > tr > .location {
     width: 30%;
 }
+
+@media screen and (max-width: 768px) {
+
+    .agenda > thead > tr > .time {
+        width: 25%;
+    }
+    .agenda > thead > tr > .event {
+        width: 35%;
+    }
+    .agenda > thead > tr > .location {
+        width: 25%;
+    }
+    .agenda > thead > tr > .expander {
+        width: 5%;
+    }
+}
+
+
 .agenda > tbody > tr > td {
     font-size: 20px;
+}
+.expansion {
+    font-size: 10vw !important;
 }
 .committee > tbody > tr > td {
     font-size: 20px;
@@ -48,4 +70,35 @@
 .innerwinner {
     padding: 15px;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+    pointer-events:none;
+}
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events:none;
+}
+.modal-content {
+    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width:inherit;
+    max-width:inherit; /* For Bootstrap 4 - to avoid the modal window stretching full width */
+    height:inherit;
+    /* To center horizontally */
+    margin: 0 auto;
+    pointer-events:all;
+}
+.desktoponly {display: initial;}
+.mobileonly {display: none;}
+
+@media screen and (max-width: 768px) {
+
+.desktoponly {display: none;}
+.mobileonly {display: block;}
+
 }

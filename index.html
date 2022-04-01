@@ -112,22 +112,42 @@
                     </div>
                 </div>
 	            <hr class="full">
-                <div class="row" id="agenda">
-                    <table class="table agenda">
-                        <thead>
-                            <tr>
-                                <th class="time"> Time </th>
-                                <th class="event"> Event </th>
-                                <th class="location"> Location </th>
-                            </tr>
-                        </thead>
-                        <tbody id="agendabody">
-                        </tbody>
-                    </table>
+                <div class="row desktoponly" id="desktopagenda">
+                    <div>
+                        <table class="table agenda">
+                            <thead>
+                                <tr>
+                                    <th class="time"> Time </th>
+                                    <th class="event"> Event </th>
+                                    <th class="location"> Location </th>
+                                </tr>
+                            </thead>
+                            <tbody id="agendabody">
+                            </tbody>
+                        </table>
+                    </div>
 
                     <script type="module"> import {makeAgenda} from "./js/ncwit_program.js"; makeAgenda("#agendabody"); </script>
 				</div>	<!-- row -->
 
+                <div class="row mobileonly" id="mobileagenda">
+                    <div>
+                        <table class="table agenda">
+                            <thead>
+                                <tr>
+                                    <th class="time"> Time </th>
+                                    <th class="event"> Event </th>
+                                    <th class="location"> Location </th>
+                                    <th class="expander"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="mobileagendabody">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <script type="module"> import {makeMobileAgenda} from "./js/ncwit_program.js"; makeMobileAgenda("#mobileagendabody"); </script>
+				</div>	<!-- row -->
 
 
 
@@ -348,9 +368,6 @@
 		    						<span class="icon-facetime-video">
 		    							<i class="fa fa-video-camera"></i>
 		    						</span>
-		    					</div>
-		    					<div class="vimeo-video" rel="" data-width="500" data-height="400">
-		    						<iframe width="420" height="315" src="//www.youtube.com/embed/DN__D5ixme0" frameborder="0" allowfullscreen></iframe>
 		    					</div>
 		    				</div>
 		    				<img class="hidden-xs post-shadow" src="img/post-shadow.png" alt=""/>

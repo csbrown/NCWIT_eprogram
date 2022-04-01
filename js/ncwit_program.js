@@ -16,7 +16,44 @@ const img_template = `
 				        	<p>{{bio}}</p>
                         </div>
 `; 
+const row_template = `
+    <td> {{Time}} </td>
+    <td> <b>{{Title}}</b><br>{{Name}}<br><i>{{Desc}}</i> </td>
+    <td> {{Location}} </td>
+`;
 
+
+
+const mobilerow_template = `
+    <td data-toggle="modal" data-target="#modal{{id}}"> {{Time}} </td>
+    <td data-toggle="modal" data-target="#modal{{id}}"> {{Title}} </td>
+    <td data-toggle="modal" data-target="#modal{{id}}"> {{Location}} </td>
+    <td class="expansion" data-toggle="modal" data-target="#modal{{id}}"> ⇲ </td>
+`;
+const agendaItemTemplate = `
+<!-- Modal -->
+<div id="modal{{id}}" class="modal fade" role="dialog">
+    <div class="vertical-alignment-helper">
+      <div class="modal-dialog vertical-align-center">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">{{Name}}</h4>
+          </div>
+          <div class="modal-body">
+            <p>{{Desc}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+`;
 
 function listToMatrix(list, elementsPerSubArray) {
     var matrix = [], i, k;
@@ -44,8 +81,11 @@ function makeAgenda(body_selector) {
 function parseAgendaRow(row) {
     return {
         Time: row.time,
-        Event: "<b>" + row.event_title + "</b><br>" +  row.presenter_name + "<br><i>" + row.event_description + "</i>",
+        Title: row.event_title,
+        Name: row.presenter_name,
+        Desc: row.event_description,
         Location: row.location,
+        id: row.time.replace(/:/g, '').replace(/\s+/,'')
     };
 }
 
@@ -54,12 +94,31 @@ function makeAgendaFromCSV(data, body_selector) {
     
     tbody.selectAll("tr")
         .data(data).enter()
-            .append("tr")
-            .selectAll("td")
-            .data(d => Object.values(d)).enter()
-                .append("td")
-                .html(d => d);
+        .append("tr")
+        .html(d =>  mustache.render(row_template, d));
 }
+
+
+function makeMobileAgenda(body_selector) {
+   d3.csv("affiliate_data/agenda.csv", parseAgendaRow).then((data) => makeMobileAgendaFromCSV(data, body_selector));
+}
+
+
+function makeMobileAgendaFromCSV(data, body_selector) {
+    var tbody = d3.select(body_selector)
+    
+    tbody.selectAll("tr")
+        .data(data).enter()
+        .append("tr")
+        .html(d => mustache.render(mobilerow_template + agendaItemTemplate, d));
+}
+
+
+
+
+
+
+
 
 
 
@@ -122,4 +181,4 @@ function makeWinnersFromCSV(data, container_selector) {
                 .html(d => mustache.render(img_template, d));
 }
 
-export {makeAgenda, makeCommittee, makeWinners};
+export {makeAgenda, makeMobileAgenda, makeCommittee, makeWinners};
