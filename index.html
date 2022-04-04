@@ -182,7 +182,6 @@
 
                     <div id="risingStarsContainer">
                     </div>
-                    <script type="module"> import {makeRisingStars} from "./js/ncwit_program.js"; makeWinners("#risingStarsContainer"); </script>
 
 			    </div>	<!-- team-members -->
 			</div>	<!-- container -->
@@ -196,7 +195,7 @@
 		    		<div class="row text-center">
 		    			<div class="col-md-10 col-md-offset-1">
 		        			<h1 class="section-title">2022 Northern Utah Affiliate Honorable Mentions</h1>
-		                	<p>Congratulations to this year's Northern Utah Affiliate Honorable Mentions!</p>
+		                	<p>Congratulations to this year's Northern Utah Affiliate Honorable Mentions</p>
 		                	<hr class="full">
 		                	<br/>
 		        		</div>
@@ -204,7 +203,6 @@
 
                     <div id="honorableMentionsContainer">
                     </div>
-                    <script type="module"> import {makeHonorableMentions} from "./js/ncwit_program.js"; makeWinners("#honorableMentionsContainer"); </script>
 
 			    </div>	<!-- team-members -->
 			</div>	<!-- container -->
@@ -224,9 +222,8 @@
 		        		</div>
 		    		</div>
 
-                    <div id="winnerscontainer">
+                    <div id="winnersContainer">
                     </div>
-                    <script type="module"> import {makeWinners} from "./js/ncwit_program.js"; makeWinners("#winnerscontainer"); </script>
 
 			    </div>	<!-- team-members -->
 			</div>	<!-- container -->
@@ -766,6 +763,14 @@
         <script src="js/daterangepicker.js"></script>
         <script src="js/bootstrap3-wysihtml5.all.min.js"></script>
         <script src="js/dashboard.js"></script>
+
+		<script type="module"> 
+			import {makeWinnersList} from "./js/ncwit_program.js"; 
+			makeWinnersList("affiliate_data/risingStars.csv", "#risingStarsContainer"); 
+			makeWinnersList("affiliate_data/honorableMentions.csv", "#honorableMentionsContainer"); 
+			makeWinnersList("affiliate_data/winners.csv", "#winnersContainer"); 
+		</script>
+
        
 	</body>
 </html>
