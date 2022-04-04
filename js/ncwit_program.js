@@ -151,6 +151,18 @@ function makeCommitteeFromCSV(data, body_selector) {
 
 
 
+
+
+function makeRisingStars(container_selector) {
+    d3.csv("affiliate_data/risingStars.csv", parseWinnerRow).then((data) => makeWinnersFromCSV(data, container_selector));
+ }
+
+
+function makeHonorableMentions(container_selector) {
+    d3.csv("affiliate_data/honorableMentions.csv", parseWinnerRow).then((data) => makeWinnersFromCSV(data, container_selector));
+ }
+
+
 function makeWinners(container_selector) {
    d3.csv("affiliate_data/winners.csv", parseWinnerRow).then((data) => makeWinnersFromCSV(data, container_selector));
 }
