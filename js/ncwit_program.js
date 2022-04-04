@@ -193,4 +193,4 @@ function makeWinnersFromCSV(data, container_selector) {
                 .html(d => mustache.render(img_template, d));
 }
 
-export {makeAgenda, makeMobileAgenda, makeCommittee, makeWinners};
+export {makeAgenda, makeMobileAgenda, makeCommittee, makeWinners, makeHonorableMentions, makeRisingStars};
