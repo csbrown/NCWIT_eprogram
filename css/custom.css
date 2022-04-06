@@ -132,7 +132,6 @@ iframe
 .navbar-default .navbar-nav>li>a {
     font-size: 16px;
     transition: all 0.5s cubic-bezier(.17,.67,.83,.67);
-    color: #E5E5E5;
     margin: 5px 20px;
     padding: 0;
     line-height: 28px;
