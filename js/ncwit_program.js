@@ -72,6 +72,28 @@ function listToMatrix(list, elementsPerSubArray) {
 
 
 
+window.MetaData = {
+    update: function() {
+        this.metadata = this.data;
+        var els = document.getElementsByClassName("metadata");
+        Array.from(els).forEach((x) => this.render(x));
+    },
+    queue: [],
+    render: function(el) {
+        el.outerHTML = mustache.render(el.outerHTML, this.metadata);
+    },
+    fetch: function() {
+        d3.csv("affiliate_data/metadata.csv", (row) => this.parse(row)).then((data) => this.update(data));
+    },
+    parse: function(row) {
+        if (!this.data) {
+            this.data = {};
+        }
+        this.data[row.key] = row.value;
+    }
+};
+window.MetaData.fetch();
+
 
 
 function makeAgenda(body_selector) {

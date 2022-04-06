@@ -26,8 +26,8 @@
 		<script src="js/script.js"></script>
 		<script src="js/wow.min.js"></script>
 		<script src="js/jquery.actual.min.js"></script>
-		<script src="js/mustache.js" type="module"></script>
 		<script src="js/d3.js"></script>
+		<script src="js/mustache.js" type="module"></script>
 		<script src="js/ncwit_program.js" type="module"></script>
 	</head>
 
@@ -108,7 +108,7 @@
 
 				<div class="row text-center print-pagebreak"> <!-- agenda -->
 		            <div class="col-md-10 col-md-offset-1">
-						<h1 class="section-title"> Northern Utah Affiliate Event Agenda </h1>
+						<h1 class="section-title metadata"> {{affiliate_name}} Affiliate Event Agenda </h1>
                     </div>
                 </div>
 	            <hr class="full">
@@ -154,7 +154,7 @@
 
 				<div class="row text-center print-pagebreak"> <!-- committee -->
 		            <div class="col-md-10 col-md-offset-1">
-						<h1 class="section-title"> Northern Utah Affiliate Event Committee </h1>
+						<h1 class="section-title metadata"> {{affiliate_name}} Affiliate Event Committee </h1>
                     </div>
                 </div>
 	            <hr class="full">
@@ -172,9 +172,9 @@
 	    	<div class="container">
 		    	<div class="team-members">
 		    		<div class="row text-center">
-		    			<div class="col-md-10 col-md-offset-1">
-		        			<h1 class="section-title">2022 Northern Utah Affiliate Rising Stars</h1>
-		                	<p>Congratulations to this year's Northern Utah Affiliate Rising Stars!</p>
+		    			<div class="col-md-10 col-md-offset-1 metadata">
+		        			<h1 class="section-title">{{year}} {{affiliate_name}} Affiliate Rising Stars</h1>
+		                	<p>Congratulations to this year's {{affiliate_name}} Affiliate Rising Stars!</p>
 		                	<hr class="full">
 		                	<br/>
 		        		</div>
@@ -193,9 +193,9 @@
 	    	<div class="container">
 		    	<div class="team-members">
 		    		<div class="row text-center">
-		    			<div class="col-md-10 col-md-offset-1">
-		        			<h1 class="section-title">2022 Northern Utah Affiliate Honorable Mentions</h1>
-		                	<p>Congratulations to this year's Northern Utah Affiliate Honorable Mentions</p>
+		    			<div class="col-md-10 col-md-offset-1 metadata">
+		        			<h1 class="section-title metadata">{{year}} {{affiliate_name}} Affiliate Honorable Mentions</h1>
+		                	<p>Congratulations to this year's {{affiliate_name}} Affiliate Honorable Mentions</p>
 		                	<hr class="full">
 		                	<br/>
 		        		</div>
@@ -214,9 +214,9 @@
 	    	<div class="container">
 		    	<div class="team-members">
 		    		<div class="row text-center">
-		    			<div class="col-md-10 col-md-offset-1">
-		        			<h1 class="section-title">2022 Northern Utah Affiliate Award Winners</h1>
-		                	<p>Congratulations to this year's Northern Utah Affiliate award Winners!</p>
+		    			<div class="col-md-10 col-md-offset-1 metadata">
+		        			<h1 class="section-title">{{year}} {{affiliate_name}} Affiliate Award Winners</h1>
+		                	<p>Congratulations to this year's {{affiliate_name}} Affiliate award Winners!</p>
 		                	<hr class="full">
 		                	<br/>
 		        		</div>
@@ -229,401 +229,6 @@
 			</div>	<!-- container -->
 	    </section>	<!-- team -->
 
-		<!-- Portfolio -->
-	    <section id="portfolio">
-	    	<div class="container">
-	    		<div class="row text-center" id="heading">
-	    			<div class="col-md-6 col-md-offset-3 wow animated zoomInDown" id="heading-text">
-	        			<h3>Our Works</h3>
-	                	<p>Take a look, Taste our cook</p>
-	                	<hr class= "full">
-	                	<br/>
-	        		</div>
-	    		</div>
-	    		<div class="main_content">
-		    		<div class="row port">
-		    			<div class="col-md-8 col-md-offset-2 text-center button-group" id="filters">
-		    				<button type="button" class="btn btn-default is-checked" data-filter="*">All</button>
-		    				<button type="button" class="btn btn-default" data-filter=".web">Web Design</button>
-		    				<button type="button" class="btn btn-default" data-filter=".game">Game</button>
-		    				<button type="button" class="btn btn-default" data-filter=".app">App</button>
-		    			</div>
-		    		</div>	<!-- row -->
-		    		<div class="row">
-		    			<div class="isotope" id="port-items">
-		    				<div class="col-md-4 col-sm-6 col-xs-6 element-item web" data-category="web">
-		    					<img class="img-responsive" src="img/web-design-1.jpg" >
-		    				</div>
-		    				<div class="col-md-4 col-sm-6 col-xs-6 element-item game" data-category="game">
-		    					<img class="img-responsive" src="img/game-2.jpg">
-		    				</div>
-		    				<div class="col-md-4 col-sm-6 col-xs-6 element-item app" data-category="app">
-		    					<img class="img-responsive" src="img/app-1.jpg">
-		    				</div>
-		    				<div class="col-md-4 col-sm-6 col-xs-6 element-item web" data-category="web">
-		    					<img class="img-responsive" src="img/web-design-2.jpg">
-		    				</div>
-		    				<div class="col-md-4 col-sm-6 col-xs-6 element-item game" data-category="game">
-		    					<img class="img-responsive" src="img/game-1.jpg">
-		    				</div>
-		    				<div class="col-md-4 col-sm-6 col-xs-6 element-item app" data-category="app">
-		    					<img class="img-responsive" src="img/app-2.jpg">
-		    				</div>
-		    				<div class="col-md-4 col-sm-6 col-xs-6 element-item web" data-category="web">
-		    					<img class="img-responsive" src="img/web-design-3.jpg">
-		    				</div>
-		    				<div class="col-md-4 col-sm-6 col-xs-6 element-item game" data-category="game">
-		    					<img class="img-responsive" src="img/game-3.jpg">
-		    				</div>
-		    				<div class="col-md-4 col-sm-6 col-xs-6 element-item app" data-category="app">
-		    					<img class="img-responsive" src="img/app-3.jpg">
-		    				</div>
-		    			</div>	<!-- isotope -->
-		    		</div>	<!-- row -->
-	    		</div>	<!-- main_content -->
-	    	</div>	<!-- container -->
-	    </section>	<!-- portfolio -->
-		
-		<!-- Price-Table -->
-	    <section id="price_table">
-	    	<div class="container">
-	    		<div class="row text-center" id="heading">
-	    			<div class="col-md-6 col-md-offset-3 wow animated zoomInDown" id="heading-text">
-	        			<h3>Price Table</h3>
-	                	<p>So flexible, More comfortable</p>
-	                	<hr class="full">
-	                	<br/>
-	        		</div>
-	    		</div>	<!-- row -->
-	    		<div class="row main_content">
-	    			<ul class="price-table-chart">
-                        <li>
-		                    <a href="#">
-		                        <strong>Free</strong>
-		                        <span class="price_table-description">1 Website</span> 
-		                        <span class="price_table-description">1 Year Updates</span> 
-		                        <span class="price_table-description">No Email Support</span>
-		                        <big class="price_table-price">$0</big>
-		                        <span class="price_table-button">Buy Now</span>
-		                    </a>
-		                </li>
-		            
-		                <li>
-		                    <a href="#">
-		                        <strong>Business</strong>
-		                        <span class="price_table-description">Unlimited Websites</span> 
-		                        <span class="price_table-description">1 Year Updates</span> 
-		                        <span class="price_table-description">1 Year Email Support</span>
-		                        <big class="price_table-price">$90</big>
-		                        <span class="price_table-button">Buy Now</span>
-		                    </a>
-		                </li>
-		            
-		                <li>
-		                    <a href="#">
-		                        <strong>Premium</strong>
-		                        <span class="price_table-description">Unlimited Websites</span> 
-		                        <span class="price_table-description">Lifetime Updates</span> 
-		                        <span class="price_table-description">Lifetime Email Support</span>
-		                        <big class="price_table-price">$190</big>
-		                        <span class="price_table-button">Buy Now</span>
-		                    </a>
-		                </li>
-		            </ul>
-	    		</div>	<!-- row main_content -->
-	    	</div>	<!-- container -->
-	    </section>	<!-- price_table -->
-
-		<!-- Blog -->
-	    <section id="blog">
-	    	<div class="container">
-	    		<div class="row text-center" id="heading">
-	    			<div class= "bg-image">
-		    			<div class= "col-md-6 col-md-offset-3 wow animated zoomInDown" id= "heading-text">
-		        			<h3>Our Blog</h3>
-		                	<p>Sharing knowledge, Accepting challenge.</p>
-		                	<hr class= "full">
-		                	<br/>
-		        		</div>
-		        	</div>
-	    		</div>
-		    	<div class= "row post">
-		    		<div class= "main_content">
-		    			<div class= "post-thumbnail col-md-5">
-		    				<div class= "frame">
-		    					<div class="post-format">
-		    						<span class="icon-picture">
-		    							<i class= "fa fa-laptop"></i>
-		    						</span>
-		    					</div>
-		    					<a href="#"><img class= "img-responsive" src="img/design1.png" alt=""/></a>
-		    				</div>
-		    				<img class="hidden-xs post-shadow" src="img/post-shadow.png" alt=""/>
-		    			</div>
-		    			<div class= "post-excerpt col-md-7">
-		    				<h2 class="title"><a href="#">FLAT &amp; MODERN TREND DESIGN</a></h2>
-		    				<div class="line-dotted"></div>
-		    				<p>
-		    					Diur apelligh to luriem rorde ist thuir quire contears foresa irmde narelair muiers lirguen luirem joires porfelas wateir ogespear pesae. Irmde gues narelair muiers lirguen luirem joires porf wateir ogeepear pesae. Diur tol apelligh to luriem rorde ist thuir quire contears foresa irmde narelair muiers lirguen luirem joires porfelas quie wateir ogespear pesae. Irmde gues narelair muiers lirguen luirem joires porf wateir ogeepear pesae.
-		    					<a href="#">...Read more</a>
-		    				</p> 
-		    				<div class="line-dotted"></div>
-		    				<p class="meta">
-		    					<strong>Date:</strong> 14/February/2013 <strong>By:</strong> Zyanya Peredo <strong>In: </strong><a href="#">Photography</a>, <a href="#">Print</a>, <a href="#">Design</a>
-		    				</p>
-		    				<div class="line-dotted"></div>
-		    				<div class= "post-share">
-		    					<p>Share this post:</p>
-		    					<ul>
-		    						<li>
-		    							<a href="#" data-toggle="tooltip" title="Contact with Facebook" class= "team-facebook">
-					        				<i class="fa fa-facebook"></i>
-					        			</a>
-		    						</li>
-		    						<li>
-		    							<a href="#" data-toggle="tooltip" title="Contact with Twitter" class= "team-twitter">
-					        				<i class="fa fa-twitter"></i>
-					        			</a>
-		    						</li>
-		    						<li>
-		    							<a href="#" data-toggle="tooltip" title="Contact with Google-plus" class= "team-google-plus">
-					        				<i class="fa fa-google-plus"></i>
-					        			</a>
-		    						</li>
-		    					</ul>	
-		    				</div>
-		    			</div>
-		    		</div>
-		    	</div>
-		    	<div class="row post">
-		    		<div class="main_content">
-		    			<div class="post-thumbnail col-md-5">
-		    				<div class="frame">
-		    					<div class="post-format image">
-		    						<span class="icon-facetime-video">
-		    							<i class="fa fa-video-camera"></i>
-		    						</span>
-		    					</div>
-		    				</div>
-		    				<img class="hidden-xs post-shadow" src="img/post-shadow.png" alt=""/>
-		    			</div>
-		    			<div class="post-excerpt col-md-7">
-		    				<h2 class="title">
-		    					<a href="#">Make up forever - tres vichy</a>
-		    				</h2>
-		    				<div class="line-dotted">
-		    				</div>
-		    				<p>
-		    					Diur apelligh to luriem rorde ist thuir quire contears foresa irmde narelair muiers lirguen luirem joires porfelas wateir ogespear pesae. Irmde gues narelair muiers lirguen luirem joires porf wateir ogeepear pesae. Diur tol apelligh to luriem rorde ist thuir quire contears foresa irmde narelair muiers lirguen luirem joires porfelas quie wateir ogespear pesae. Irmde gues narelair muiers lirguen luirem joires porf wateir ogeepear pesae.
-		    					<a href="#">...Read more</a>
-		    				</p> 
-		    				<div class="line-dotted"></div>
-		    				<p class="meta"><strong>Date: </strong>14/February/2013 <strong>By: </strong>Zyanya Peredo <strong>In: </strong><a href="#">Photography</a>, <a href="#">Print</a>, <a href="#">Design</a>
-		    				</p>
-		    				<div class="line-dotted"></div>
-		    				<div class= "post-share">
-		    					<p>Share this post:</p>
-		    					<ul>
-		    						<li>
-		    							<a href="#" data-toggle="tooltip" title="Contact with Facebook" class= "team-facebook">
-					        				<i class="fa fa-facebook"></i>
-					        			</a>
-		    						</li>
-		    						<li>
-		    							<a href="#" data-toggle="tooltip" title="Contact with Twitter" class= "team-twitter">
-					        				<i class="fa fa-twitter"></i>
-					        			</a>
-		    						</li>
-		    						<li>
-		    							<a href="#" data-toggle="tooltip" title="Contact with Google-plus" class= "team-google-plus">
-					        				<i class="fa fa-google-plus"></i>
-					        			</a>
-		    						</li>
-		    					</ul>	
-		    				</div>
-		    			</div>
-		    		</div>
-		    	</div>
-		    	<div class="row post">
-		    		<div class="main_content">
-		    			<div class="post-thumbnail col-md-5">
-		    				<div class="frame">
-		    					<div class="post-format quote">
-		    						<span class="icon-camera-retro">
-		    							<i class= "fa fa-star"></i>
-		    						</span>
-		    					</div>
-		    					<a href="#"><img class= "img-responsive" src="img/blog3.png" alt=""/></a>
-		    				</div>
-		    				<img class="hidden-xs post-shadow" src="img/post-shadow.png" alt=""/>
-		    			</div>
-		    			<div class="post-excerpt col-md-7">
-		    				<h2 class="title">
-		    					<a href="#">Make up forever - Make your web page beautiful.</a>
-		    				</h2>
-		    				<div class="line-dotted"></div>
-		    				<p>
-		    					Diur apelligh to luriem rorde ist thuir quire contears foresa irmde narelair muiers lirguen luirem joires porfelas wateir ogespear pesae. Irmde gues narelair muiers lirguen luirem joires porf wateir ogeepear pesae.
-		    					<a href="#">...Read more</a>
-		    				</p> 
-		    				<div class="line-dotted"></div>
-		    				<p class="meta"><strong>Date: </strong>14/February/2013 <strong>By: </strong>Zyanya Peredo<strong>In: </strong><a href="#">Photography</a>, <a href="#">Print</a>, <a href="#">Design</a>
-		    				</p>
-		    				<div class="line-dotted"></div>
-		    				<div class= "post-share">
-		    					<p>Share this post:</p>
-		    					<ul>
-		    						<li>
-		    							<a href="#" data-toggle="tooltip" title="Contact with Facebook" class= "team-facebook">
-					        				<i class="fa fa-facebook"></i>
-					        			</a>
-		    						</li>
-		    						<li>
-		    							<a href="#" data-toggle="tooltip" title="Contact with Twitter" class= "team-twitter">
-					        				<i class="fa fa-twitter"></i>
-					        			</a>
-		    						</li>
-		    						<li>
-		    							<a href="#" data-toggle="tooltip" title="Contact with Google-plus" class= "team-google-plus">
-					        				<i class="fa fa-google-plus"></i>
-					        			</a>
-		    						</li>
-		    					</ul>	
-		    				</div>
-		    			</div>
-		    		</div>
-		    	</div>
-		    	<div class="row post">
-		    		<div class="main_content">
-		    			<div class="post-thumbnail col-md-5">
-		    				<div class="frame">
-		    					<div class="post-format gallery">
-		    						<span class="icon-quote-left">
-		    							<i class= "fa fa-bookmark"></i>
-		    						</span>
-		    					</div>
-		    					<a href="#"><img class= "img-responsive" src="img/global_focus.jpg" alt=""/></a>
-		    				</div>
-		    				<img class="hidden-xs post-shadow" src="img/post-shadow.png" alt=""/>
-		    			</div>
-		    			<div class="post-excerpt col-md-7">
-		    				<h2 class="title">
-		    					<a href="#">The most beautiful quotes ever</a>
-		    				</h2>
-		    				<div class="line-dotted"></div>
-		    				<p>
-		    					Diur apelligh to luriem rorde ist thuir quire contears foresa irmde narelair muiers lirguen luirem joires porfelas wateir ogespear pesae. Irmde gues narelair muiers lirguen luirem joires porf wateir ogeepear pesae. Diur tol apelligh to luriem rorde ist thuir quire contears foresa irmde narelair muiers lirguen luirem joires porfelas quie wateir ogespear pesae. Irmde gues narelair muiers lirguen luirem joires porf wateir ogeepear pesae.
-		    					<a href="#">...Read more</a>
-		    				</p> 
-		    				<div class="line-dotted"></div>
-		    				<p class="meta"><strong>Date:</strong> 14/February/2013 <strong>By:</strong> Zyanya Peredo <strong>In:</strong> <a href="#">Photography</a>, <a href="#">Print</a>, <a href="#">Design</a>
-		    				</p>
-		    				<div class="line-dotted"></div>
-		    				<div class= "post-share">
-		    					<p>Share this post:</p>
-		    					<ul>
-		    						<li>
-		    							<a href="#" data-toggle="tooltip" title="Contact with Facebook" class= "team-facebook">
-					        				<i class="fa fa-facebook"></i>
-					        			</a>
-		    						</li>
-		    						<li>
-		    							<a href="#" data-toggle="tooltip" title="Contact with Twitter" class= "team-twitter">
-					        				<i class="fa fa-twitter"></i>
-					        			</a>
-		    						</li>
-		    						<li>
-		    							<a href="#" data-toggle="tooltip" title="Contact with Google-plus" class= "team-google-plus">
-					        				<i class="fa fa-google-plus"></i>
-					        			</a>
-		    						</li>
-		    					</ul>	
-		    				</div>
-		    			</div>
-		    		</div>
-		    	</div>
-	    		<div class= "row">
-	    			<div class= "col-md-6 col-md-offset-3 text-center">
-	    				<ul class="pagination">
-							<li class="disabled"><a href="#">&gt;&gt;</a></li>
-							<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-						  	<li><a href="#">2</a></li>
-						  	<li><a href="#">3</a></li>
-						  	<li><a href="#">4</a></li>
-						  	<li><a href="#">5</a></li>
-						  	<li><a href="#">>></a></li>
-						</ul>
-	    			</div>
-	    		</div>
-    		</div>	<!-- container -->
-	    </section>	<!-- blog -->
-
-		<!-- Clients -->
-	    <section id= "testimonial">
-	    	<div class= "container">
-	    		<div class= "row text-center" id= "heading">
-	    			<div class= "bg-image col-md-12">
-	    				<div class= "col-md-6 col-md-offset-3 wow animated zoomInDown" id= "heading-text">
-		        			<h3>Testimonials</h3>
-		                	<p>Their satisfication, Our inspiration.</p>
-		                	<hr class= "full">
-		                	<br/>
-		        		</div>
-	    			</div>
-	    		</div>
-	    		<div class= "row main_content">
-	    			<div class= "col-md-6 col-md-offset-3">
-	    				<div id="client-speech" class="owl-carousel owl-theme">
-							<div class="item">
-								<div class= "row">
-									<div class= "col-md-6 col-md-offset-3">
-										<img class= "img-circle img-responsive center-block" src="img/client1.png">
-									</div>	
-									<div class= "col-md-12">
-										<p class= "client-comment text-center">
-											When you form a team, why do you try to form a team? Because teamwork builds trust and trust builds speed.
-										</p>
-									</div>
-								</div>
-								<div class= "row text-center">
-									<p class= "client-name text-center"> ----- Noona Nuengthida Sophon</p>
-								</div>
-							</div>
-							<div class="item">
-								<div class= "row">
-									<div class= "col-md-6 col-md-offset-3">
-										<img class= "img-circle img-responsive center-block" src="img/client2.jpg">
-									</div>
-									<div class= "col-md-12">
-										<p class= "client-comment text-center">
-											I am constantly being asked about individuals.&nbsp;The only way to win is as a team. Football is not about one or two or three star players.
-										</p>
-									</div>
-								</div>
-								<div class= "row text-center">
-									<p class= "client-name">-----Md. Aminul Islam Bhuiyan</p>
-								</div>
-							</div>
-							<div class="item">
-								<div class= "row">
-									<div class= "col-md-6 col-md-offset-3">
-										<img class= "img-circle img-responsive center-block" src="img/client3.png">
-									</div>
-									<div class= "col-md-12">
-										<p class= "client-comment text-center">
-											Individual commitment to a group effort- that is what makes a team work, a company work, a society work, a civilisation work.
-										</p>
-									</div>
-								</div>
-								<div class= "row text-center">
-									<p class= "client-name">-----  Jenifar Pink</p>
-								</div>
-							</div>
-						</div>
-	    			</div>
-	    		</div>
-	    	</div>	
-	    </section>	<!-- clients -->
 
 		<!-- contact -->
 	    <section id= "contact">
