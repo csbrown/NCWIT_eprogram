@@ -72,13 +72,12 @@ function listToMatrix(list, elementsPerSubArray) {
 
 
 
-window.MetaData = {
+var MetaData = {
     update: function() {
         this.metadata = this.data;
         var els = document.getElementsByClassName("metadata");
         Array.from(els).forEach((x) => this.render(x));
     },
-    queue: [],
     render: function(el) {
         el.outerHTML = mustache.render(el.outerHTML, this.metadata);
     },
@@ -92,7 +91,7 @@ window.MetaData = {
         this.data[row.key] = row.value;
     }
 };
-window.MetaData.fetch();
+MetaData.fetch();
 
 
 
