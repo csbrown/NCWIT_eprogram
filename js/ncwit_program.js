@@ -68,7 +68,7 @@ const agendaItemTemplate = `
 
 const fullPageAwardTemplate = `
         <img src="affiliate_data/winner_images/{{src}}" class="pull-left fullpageimg">
-        <span>
+        <span style="white-space: pre-line;">
             <h3>{{name}}</h3>
             <p>{{bio}}</p>
         </span>
