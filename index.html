@@ -197,8 +197,8 @@
 		    	<div class="team-members">
 		    		<div class="row text-center">
 		    			<div class="col-md-10 col-md-offset-1 metadata">
-		        			<h1 class="section-title">{{year}} Educator Winner</h1>
-		                	<p>Congratulations to this year's Educator Winner!</p>
+		        			<h1 class="section-title">{{year}} Educator Winners</h1>
+		                	<p>Congratulations to this year's Educator Winners!</p>
 		                	<hr class="full">
 		                	<br/>
 		        		</div>
@@ -239,8 +239,8 @@
 		    	<div class="team-members">
 		    		<div class="row text-center">
 		    			<div class="col-md-10 col-md-offset-1 metadata">
-		        			<h1 class="section-title">{{year}} National Winner</h1>
-		                	<p>Congratulations to this year's National Winner!</p>
+		        			<h1 class="section-title">{{year}} National Winners</h1>
+		                	<p>Congratulations to this year's National Winners!</p>
 		                	<hr class="full">
 		                	<br/>
 		        		</div>
@@ -516,8 +516,8 @@
         <script src="js/dashboard.js"></script>
 
 		<script type="module"> 
-			import {makeWinners, makeSimpleWinners} from "./js/ncwit_program.js"; 
-			makeWinners("affiliate_data/educatorWinners.csv", "#educatorWinnersContainer"); 
+			import {makeWinners, makeSimpleWinners, makeFullPageWinners} from "./js/ncwit_program.js"; 
+			//makeWinners("affiliate_data/educatorWinners.csv", "#educatorWinnersContainer"); 
 			makeWinners("affiliate_data/educatorHonorableMentions.csv", "#educatorHonorableMentionsContainer");
 
 			makeWinners("affiliate_data/nationalWinners.csv", "#nationalWinnersContainer"); 
@@ -525,7 +525,9 @@
 			
 			makeSimpleWinners("affiliate_data/stateRisingStars.csv", "#stateRisingStarsContainer"); 
 			makeSimpleWinners("affiliate_data/stateHonorableMentions.csv", "#stateHonorableMentionsContainer"); 
-			makeWinners("affiliate_data/stateWinners.csv", "#stateWinnersContainer"); 
+			makeWinners("affiliate_data/stateWinners.csv", "#stateWinnersContainer");
+
+            makeFullPageWinners("affiliate_data/educatorWinners.csv", "#educatorWinnersContainer");
 		</script>
 
        

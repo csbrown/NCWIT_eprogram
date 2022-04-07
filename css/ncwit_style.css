@@ -11,6 +11,13 @@
     background: white;
 }
 
+.title {
+    color: #2E8CCB;
+    font-weight: bold;
+    font-size: 29px;
+    font-family: 'Roboto', sans-serif;
+}
+
 .section-title {
     color: #2E8CCB;
     font-weight: bold;
@@ -112,7 +119,18 @@
 
 @media screen and (max-width: 768px) {
 
-.desktoponly {display: none;}
-.mobileonly {display: block;}
+    .desktoponly {display: none;}
+    .mobileonly {display: block;}
 
+}
+
+.fullpageimg {
+    width: 30%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+@media screen and (max-width: 768px) {
+    .fullpageimg {
+        width: 100%;
+    }
 }

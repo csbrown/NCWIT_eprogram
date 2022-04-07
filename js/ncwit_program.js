@@ -66,6 +66,15 @@ const agendaItemTemplate = `
 </div>
 `;
 
+const fullPageAwardTemplate = `
+        <img src="affiliate_data/winner_images/{{src}}" class="pull-left fullpageimg">
+        <span>
+            <h3>{{name}}</h3>
+            <p>{{bio}}</p>
+        </span>
+`;
+
+
 function listToMatrix(list, elementsPerSubArray) {
     var matrix = [], i, k;
 
@@ -244,4 +253,41 @@ function makeWinnersFromCSV(data, container_selector) {
                 .html(d => mustache.render(img_template, d));
 }
 
-export {makeAgenda, makeMobileAgenda, makeCommittee, makeWinners, makeSimpleWinners};
+
+
+function makeFullPageWinners(csv_file, container_selector) {
+    d3.csv(csv_file, parseFullPageRow)
+        .then((data) => makeFullPageWinnersFromCSV(data, container_selector));
+}
+
+function parseFullPageRow(row) {
+    return {
+        name: row.name,
+        bio: row.bio,
+        src: row.image,
+        school: row.school
+    };
+}
+
+function makeFullPageWinnersFromCSV(data, container_selector) {
+    var container = d3.select(container_selector)
+   
+    container.selectAll("div")
+        .data(data).enter()
+        .append("div")
+            .attr("class", "col-md-12 col-sm-12 col-xs-12")
+            .html(d => mustache.render(fullPageAwardTemplate, d));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+export {makeAgenda, makeMobileAgenda, makeCommittee, makeWinners, makeSimpleWinners, makeFullPageWinners};
