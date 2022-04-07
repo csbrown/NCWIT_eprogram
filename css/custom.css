@@ -77,7 +77,6 @@ box-shadow: none;
 
 button.navbar-toggle .ion-navicon {
     font-size: 2em;
-    color: #fff;
 }
 
 body {
@@ -143,10 +142,6 @@ iframe
     margin-bottom: 0px;
 }
 
-.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus
-{
-    color: #fff;
-}
 .navbar-default .navbar-brand {
     color: #fff;
     font-family: "Coda";  
