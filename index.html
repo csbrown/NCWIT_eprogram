@@ -191,9 +191,92 @@
             </div>
         </section>
 
+		<!-- Educator Winners -->
+	    <section id="educatorWinners">
+	    	<div class="container">
+		    	<div class="team-members">
+		    		<div class="row text-center">
+		    			<div class="col-md-10 col-md-offset-1 metadata">
+		        			<h1 class="section-title">{{year}} Educator Winner</h1>
+		                	<p>Congratulations to this year's Educator Winner!</p>
+		                	<hr class="full">
+		                	<br/>
+		        		</div>
+		    		</div>
+
+                    <div id="educatorWinnersContainer">  <!-- from educatorWinners.csv -->
+                    </div>
+
+			    </div>	<!-- team-members -->
+			</div>	<!-- container -->
+	    </section>	<!-- team -->
+
+
+		<!-- v Honorable Mentions -->
+		<section id="educatorHonorableMentions">
+			<div class="container">
+				<div class="team-members">
+					<div class="row text-center">
+						<div class="col-md-10 col-md-offset-1 metadata">
+							<h1 class="section-title metadata">{{year}} Educator Honorable Mentions</h1>
+							<p>Congratulations to this year's Educator Honorable Mentions</p>
+							<hr class="full">
+							<br/>
+						</div>
+					</div>
+
+					<div id="educatorHonorableMentionsContainer"> <!-- from educatorHonorableMentions.csv -->
+					</div>
+
+				</div>	<!-- team-members -->
+			</div>	<!-- container -->
+		</section>	<!-- team -->
+
+
+		<!-- National Winners -->
+	    <section id="nationalWinners">
+	    	<div class="container">
+		    	<div class="team-members">
+		    		<div class="row text-center">
+		    			<div class="col-md-10 col-md-offset-1 metadata">
+		        			<h1 class="section-title">{{year}} National Winner</h1>
+		                	<p>Congratulations to this year's National Winner!</p>
+		                	<hr class="full">
+		                	<br/>
+		        		</div>
+		    		</div>
+
+                    <div id="nationalWinnersContainer">  <!-- from nationalWinners.csv -->
+                    </div>
+
+			    </div>	<!-- team-members -->
+			</div>	<!-- container -->
+	    </section>	<!-- team -->
+
+
+		<!-- National Honorable Mentions -->
+	    <section id="nationalHonorableMentions">
+	    	<div class="container">
+		    	<div class="team-members">
+		    		<div class="row text-center">
+		    			<div class="col-md-10 col-md-offset-1 metadata">
+		        			<h1 class="section-title metadata">{{year}} National Honorable Mentions</h1>
+		                	<p>Congratulations to this year's National Honorable Mentions</p>
+		                	<hr class="full">
+		                	<br/>
+		        		</div>
+		    		</div>
+
+                    <div id="nationalHonorableMentionsContainer"> <!-- from nationalHonorableMentions.csv -->
+                    </div>
+
+			    </div>	<!-- team-members -->
+			</div>	<!-- container -->
+	    </section>	<!-- team -->
+
 
 		<!-- Rising Stars -->
-	    <section id="risingStars">
+	    <section id="stateRisingStars">
 	    	<div class="container">
 		    	<div class="team-members">
 		    		<div class="row text-center">
@@ -205,7 +288,7 @@
 		        		</div>
 		    		</div>
 
-                    <div id="risingStarsContainer">
+                    <div id="stateRisingStarsContainer"> <!-- from stateRisingStars.csv -->
                     </div>
 
 			    </div>	<!-- team-members -->
@@ -214,7 +297,7 @@
 
 
 		<!-- Honorable Mentions -->
-	    <section id="honorableMentions">
+	    <section id="stateHonorableMentions">
 	    	<div class="container">
 		    	<div class="team-members">
 		    		<div class="row text-center">
@@ -226,7 +309,7 @@
 		        		</div>
 		    		</div>
 
-                    <div id="honorableMentionsContainer">
+                    <div id="stateHonorableMentionsContainer"> <!-- from stateHonorableMentions.csv -->
                     </div>
 
 			    </div>	<!-- team-members -->
@@ -235,7 +318,7 @@
 
 
 		<!-- Winners -->
-	    <section id="winners">
+	    <section id="stateWinners">
 	    	<div class="container">
 		    	<div class="team-members">
 		    		<div class="row text-center">
@@ -247,14 +330,12 @@
 		        		</div>
 		    		</div>
 
-                    <div id="winnersContainer">
+                    <div id="stateWinnersContainer">  <!-- from stateWinners.csv -->
                     </div>
 
 			    </div>	<!-- team-members -->
 			</div>	<!-- container -->
 	    </section>	<!-- team -->
-
-
 
 
 		<!-- About Educator Award -->
@@ -435,10 +516,16 @@
         <script src="js/dashboard.js"></script>
 
 		<script type="module"> 
-			import {makeWinnersList} from "./js/ncwit_program.js"; 
-			makeWinnersList("affiliate_data/risingStars.csv", "#risingStarsContainer"); 
-			makeWinnersList("affiliate_data/honorableMentions.csv", "#honorableMentionsContainer"); 
-			makeWinnersList("affiliate_data/winners.csv", "#winnersContainer"); 
+			import {makeWinners, makeSimpleWinners} from "./js/ncwit_program.js"; 
+			makeWinners("affiliate_data/educatorWinners.csv", "#educatorWinnersContainer"); 
+			makeWinners("affiliate_data/educatorHonorableMentions.csv", "#educatorHonorableMentionsContainer");
+
+			makeWinners("affiliate_data/nationalWinners.csv", "#nationalWinnersContainer"); 
+			makeWinners("affiliate_data/nationalHonorableMentions.csv", "#nationalHonorableMentionsContainer"); 
+			
+			makeSimpleWinners("affiliate_data/stateRisingStars.csv", "#stateRisingStarsContainer"); 
+			makeSimpleWinners("affiliate_data/stateHonorableMentions.csv", "#stateHonorableMentionsContainer"); 
+			makeWinners("affiliate_data/stateWinners.csv", "#stateWinnersContainer"); 
 		</script>
 
        

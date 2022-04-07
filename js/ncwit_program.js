@@ -16,6 +16,17 @@ const img_template = `
 				        	<p>{{bio}}</p>
                         </div>
 `; 
+const img_simpleTemplate = `
+                        <div class="innerwinner">
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <img class="img-circle img-responsive center-block" src="affiliate_data/winner_images/{{src}}">
+                                </div>
+                            </div>
+				        	<h4>{{name}}</h4>
+				        	<h4>{{school}}</h4>
+                        </div>
+`; 
 const row_template = `
     <td> {{Time}} </td>
     <td> <b>{{Title}}</b><br>{{Name}}<br><i>{{Desc}}</i> </td>
@@ -167,7 +178,42 @@ function makeCommitteeFromCSV(data, body_selector) {
 }
 
 
-function makeWinnersList(csv_file, container_selector) {
+
+
+
+
+
+
+function makeSimpleWinners(csv_file, container_selector) {
+    d3.csv(csv_file, parseSimpleWinnerRow)
+        .then((data) => makeSimpleWinnersFromCSV(data, container_selector));
+}
+
+function parseSimpleWinnerRow(row) {
+    return {
+        name: row.name,
+        school: row.school,
+        src: row.image
+    };
+}
+
+function makeSimpleWinnersFromCSV(data, container_selector) {
+    var container = d3.select(container_selector)
+    var data_matrix = listToMatrix(data, 3);
+   
+    container.selectAll("div")
+        .data(data_matrix).enter()
+        .append("div")
+            .attr("class", "row main-content winnerrow")
+            .selectAll("div")
+            .data(d => d).enter()
+            .append("div")
+                .attr("class", "col-md-4 col-sm-12 col-xs-12 text-center winner")
+                .html(d => mustache.render(img_simpleTemplate, d));
+}
+
+
+function makeWinners(csv_file, container_selector) {
     d3.csv(csv_file, parseWinnerRow)
         .then((data) => makeWinnersFromCSV(data, container_selector));
 }
@@ -198,4 +244,4 @@ function makeWinnersFromCSV(data, container_selector) {
                 .html(d => mustache.render(img_template, d));
 }
 
-export {makeAgenda, makeMobileAgenda, makeCommittee, makeWinnersList};
+export {makeAgenda, makeMobileAgenda, makeCommittee, makeWinners, makeSimpleWinners};
