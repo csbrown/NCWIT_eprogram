@@ -2,6 +2,12 @@
     position: absolute;
     top: 43%;
 }
+.navbar-collapse {
+    width: 93vw;
+}
+.navbar-toggle {
+    float: none;
+}
 .container-fluid > .navbar-collapse, .container-fluid > .navbar-header, .container > .navbar-collapse, .container > .navbar-header {
     margin-left: 0;
 }
