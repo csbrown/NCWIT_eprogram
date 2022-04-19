@@ -231,6 +231,37 @@ function parseWinnerRow(row) {
     return {
         name: row.name,
         school: row.school,
+        bio: row.bio,
+        src: row.image
+    };
+}
+
+function makeWinnersFromCSV(data, container_selector) {
+    var container = d3.select(container_selector)
+    var data_matrix = listToMatrix(data, 3);
+   
+    container.selectAll("div")
+        .data(data_matrix).enter()
+        .append("div")
+            .attr("class", "row main-content winnerrow")
+            .selectAll("div")
+            .data(d => d).enter()
+            .append("div")
+                .attr("class", "col-md-4 col-sm-12 col-xs-12 text-center winner")
+                .html(d => mustache.render(img_template, d));
+}
+
+/*  = = = includes all fields suggested by the AiC program template = = = 
+
+function makeWinners(csv_file, container_selector) {
+    d3.csv(csv_file, parseWinnerRow)
+        .then((data) => makeWinnersFromCSV(data, container_selector));
+}
+
+function parseWinnerRow(row) {
+    return {
+        name: row.name,
+        school: row.school,
         city: row.city,
         classyear: row.class,
         bio: row.bio,
@@ -252,8 +283,7 @@ function makeWinnersFromCSV(data, container_selector) {
                 .attr("class", "col-md-4 col-sm-12 col-xs-12 text-center winner")
                 .html(d => mustache.render(img_template, d));
 }
-
-
+*/
 
 function makeFullPageWinners(csv_file, container_selector) {
     d3.csv(csv_file, parseFullPageRow)
