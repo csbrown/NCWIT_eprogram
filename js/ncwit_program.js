@@ -11,8 +11,6 @@ const img_template = `
                             </div>
 				        	<h4>{{name}}</h4>
 				        	<h4>{{school}}</h4>
-				        	<h4>{{city}}</h4>
-				        	<h4>Class of {{classyear}}</h4>
 				        	<p>{{bio}}</p>
                         </div>
 `; 
