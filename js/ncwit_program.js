@@ -26,14 +26,12 @@ const img_simpleTemplate = `
                         </div>
 `; 
 const row_template = `
-    <td> {{Time}} </td>
     <td> <b>{{Title}}</b><br><i>{{Name}}</i><br>{{Desc}}</td>
 `;
 
 
 
 const mobilerow_template = `
-    <td data-toggle="modal" data-target="#modal{{id}}"> {{Time}} </td>
     <td data-toggle="modal" data-target="#modal{{id}}"> {{Title}} </td>
     <td class="expansion" data-toggle="modal" data-target="#modal{{id}}"> ⇲ </td>
 `;
@@ -45,7 +43,6 @@ const agendaItemTemplate = `
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title">{{Name}}</h4>
           </div>
           <div class="modal-body">
@@ -117,11 +114,9 @@ function makeAgenda(body_selector) {
 
 function parseAgendaRow(row) {
     return {
-        Time: row.time,
         Title: row.event_title,
         Name: row.presenter_name,
         Desc: row.event_description,
-        id: row.time.replace(/:/g, '').replace(/\s+/,'')
     };
 }
 
