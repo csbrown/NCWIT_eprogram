@@ -27,8 +27,7 @@ const img_simpleTemplate = `
 `; 
 const row_template = `
     <td> {{Time}} </td>
-    <td> <b>{{Title}}</b><br>{{Name}}<br><i>{{Desc}}</i> </td>
-    <td> {{Location}} </td>
+    <td> <b>{{Title}}</b><br><i>{{Name}}</i><br>{{Desc}}</td>
 `;
 
 
@@ -36,7 +35,6 @@ const row_template = `
 const mobilerow_template = `
     <td data-toggle="modal" data-target="#modal{{id}}"> {{Time}} </td>
     <td data-toggle="modal" data-target="#modal{{id}}"> {{Title}} </td>
-    <td data-toggle="modal" data-target="#modal{{id}}"> {{Location}} </td>
     <td class="expansion" data-toggle="modal" data-target="#modal{{id}}"> ⇲ </td>
 `;
 const agendaItemTemplate = `
@@ -123,7 +121,6 @@ function parseAgendaRow(row) {
         Title: row.event_title,
         Name: row.presenter_name,
         Desc: row.event_description,
-        Location: row.location,
         id: row.time.replace(/:/g, '').replace(/\s+/,'')
     };
 }
