@@ -29,6 +29,12 @@ const row_template = `
     <td> <b>{{Title}}</b><br><i>{{Name}}</i><br>{{Desc}}</td>
 `;
 
+const sponsor_template = `
+                    <img class="sponsor-img" src="{{src}}">
+`;
+const sponsor_tier_header_template = `
+                    <h3>{{tier}}</h3>
+`;
 
 
 const mobilerow_template = `
@@ -105,6 +111,63 @@ var MetaData = {
     }
 };
 MetaData.fetch();
+
+
+
+
+
+function makeSponsors(csv_file, container_selector) {
+    d3.csv(csv_file, parseSponsorRow)
+        .then((data) => makeSponsorsFromCSV(data, container_selector));
+}
+
+function parseSponsorRow(row) {
+    return {
+        title: row.title,
+        src: row.image,
+        tier: row.tier,
+        level: row.level
+    };
+}
+
+function makeSponsorsFromCSV(data, container_selector) {
+    var container = d3.select(container_selector);
+    var data_groups = d3.groups(data, d => d.level);
+    data_groups = d3.sort(data_groups, g => parseInt(g[0]));
+  
+    console.log(data_groups); 
+    var sponsor_groups = container.data([data_groups])
+        .selectAll("div")
+        .data(d => {console.log(d); return d;}).enter()
+        .append("div")
+            .attr("class", "sponsor-group");
+    sponsor_groups.append("div")
+        .attr("class", "sponsor-tier")
+        .html(d => {console.log(d); return mustache.render(sponsor_tier_header_template, d[1][0])});
+    sponsor_groups.selectAll(".row")
+        .data(d => {console.log(listToMatrix(d[1], 3)); return listToMatrix(d[1], 3)}).enter()
+        .append("div")
+            .attr("class", "row sponsor-row")
+            .selectAll("div")
+            .data(d => {console.log(d); return d}).enter()
+            .append("div")
+                .attr("class", "col-md-4 col-sm-6 col-xs-6 sponsor")
+                .html(d => mustache.render(sponsor_template, d));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -310,4 +373,4 @@ function makeFullPageWinnersFromCSV(data, container_selector) {
 
 
 
-export {makeAgenda, makeMobileAgenda, makeCommittee, makeWinners, makeSimpleWinners, makeFullPageWinners};
+export {makeAgenda, makeMobileAgenda, makeCommittee, makeWinners, makeSimpleWinners, makeFullPageWinners, makeSponsors};
