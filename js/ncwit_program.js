@@ -1,7 +1,5 @@
 import mustache from "./mustache.js"
 
-
-
 const img_template = `
                         <div class="innerwinner">
                             <div class="row">

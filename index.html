@@ -320,6 +320,54 @@
 		</section>	<!-- team -->
 
 
+		<!-- Diversity AP -->
+		<section>
+			<div class="container">
+                <div class="row text-center">
+                    <div class="col-md-10 col-md-offset-1 metadata">
+                        <a data-toggle="collapse" href="#educatorDivertyAPContainer">
+                            <h1 class="section-title metadata">{{year}} College Board AP Computer Female Diversity Award for AP Computer Science A</h1>
+                        </a>
+                        <hr class="full">
+                        <br/>
+                    </div>
+                </div>
+
+                <div class="collapse in" id="educatorDiversityAPContainer">
+                </div>
+
+			</div>	<!-- container -->
+		</section>	<!-- team -->
+
+
+		<!-- Diversity CS Principles -->
+		<section>
+			<div class="container">
+                <div class="row text-center">
+                    <div class="col-md-10 col-md-offset-1 metadata">
+                        <a data-toggle="collapse" href="#educatorDiversityCSContainer">
+                            <h1 class="section-title metadata">{{year}} College Board AP Computer Female Diversity Award for AP Computer Science Principles</h1>
+                        </a>
+                        <hr class="full">
+                        <br/>
+                    </div>
+                </div>
+
+                <div class="collapse in" id="educatorDiversityCSContainer">
+                </div>
+
+			</div>	<!-- container -->
+		</section>	<!-- team -->
+
+
+
+
+
+
+
+
+
+
 		<!-- National Winners -->
 	    <section id="nationalWinners">
 	    	<div class="container">
@@ -584,7 +632,10 @@
 		<script type="module"> 
 			import {makeWinners, makeSimpleWinners, makeFullPageWinners, makeSponsors} from "./js/ncwit_program.js"; 
 			//makeWinners("affiliate_data/educatorWinners.csv", "#educatorWinnersContainer"); 
+            makeFullPageWinners("affiliate_data/educatorWinners.csv", "#educatorWinnersContainer");
 			makeFullPageWinners("affiliate_data/educatorHonorableMentions.csv", "#educatorHonorableMentionsContainer");
+			makeFullPageWinners("affiliate_data/educatorDiversityAP.csv", "#educatorDiversityAPContainer");
+			makeFullPageWinners("affiliate_data/educatorDiversityCS.csv", "#educatorDiversityCSContainer");
 
 			makeFullPageWinners("affiliate_data/nationalWinners.csv", "#nationalWinnersContainer"); 
 			makeWinners("affiliate_data/nationalHonorableMentions.csv", "#nationalHonorableMentionsContainer"); 
@@ -593,7 +644,6 @@
 			makeSimpleWinners("affiliate_data/stateHonorableMentions.csv", "#stateHonorableMentionsContainer"); 
 			makeWinners("affiliate_data/stateWinners.csv", "#stateWinnersContainer");
 
-            makeFullPageWinners("affiliate_data/educatorWinners.csv", "#educatorWinnersContainer");
     
             makeSponsors("affiliate_data/sponsors.csv", "#sponsorContainer")
     
